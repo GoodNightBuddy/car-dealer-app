@@ -67,22 +67,25 @@ The app will run on http://localhost:3000.
 
 📂 Project Structure
 
+## 📂 Project Structure
+
 ```plaintext
 car-dealer-app/
 ├── app/
-│ ├── page.tsx # Filter page (home page)
-│ ├── result/[makeId]/[year]/page.tsx # Result page
+│   ├── page.tsx                           # Filter page (home page)
+│   ├── result/[makeId]/[year]/page.tsx    # Result page
 ├── components/
-│ ├── loader/loader.component.tsx # Loader animation
-│ ├── error-boundary/error-boundary.component.tsx # Error boundary
+│   ├── loader/loader.component.tsx        # Loader animation
+│   ├── error-boundary/error-boundary.component.tsx  # Error boundary
 ├── constants/
-│ └── vehicle.constants.ts # App constants (start year)
+│   └── vehicle.constants.ts               # App constants (start year)
 ├── services/
-│ └── vehicle.service.ts # API service for car data
+│   └── vehicle.service.ts                 # API service for car data
 ├── types/
-│ └── vehicle.types.ts # TypeScript types
+│   └── vehicle.types.ts                   # TypeScript types
 └── styles/
-└── globals.css # Global CSS
+    └── globals.css                        # Global CSS
+
 ```
 
 ## 💡 Key Commands
