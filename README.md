@@ -67,6 +67,7 @@ The app will run on http://localhost:3000.
 
 📂 Project Structure
 
+```plaintext
 car-dealer-app/
 ├── app/
 │ ├── page.tsx # Filter page (home page)
@@ -82,6 +83,7 @@ car-dealer-app/
 │ └── vehicle.types.ts # TypeScript types
 └── styles/
 └── globals.css # Global CSS
+```
 
 ## 💡 Key Commands
 
