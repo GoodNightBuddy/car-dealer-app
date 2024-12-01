@@ -49,7 +49,11 @@ MAX_YEARS=5
 
 ## 🔧 Usage
 
-Start Development Server
+### ❗Important note.
+
+If there are errors on result page or during build try to use VPN with US region.
+
+- Start Development Server
 
 ```bash
 npm run dev
@@ -57,7 +61,7 @@ npm run dev
 
 Open http://localhost:3000 in your browser.
 
-Build for Production
+- Build for Production
 
 ```bash
 npm run build & npm start
@@ -65,26 +69,24 @@ npm run build & npm start
 
 The app will run on http://localhost:3000.
 
-📂 Project Structure
-
 ## 📂 Project Structure
 
 ```plaintext
 car-dealer-app/
 ├── app/
-│   ├── page.tsx                           # Filter page (home page)
-│   ├── result/[makeId]/[year]/page.tsx    # Result page
+│   ├── page.tsx                                        # Filter page (home page)
+│   ├── result/[makeId]/[year]/page.tsx                 # Result page
 ├── components/
-│   ├── loader/loader.component.tsx        # Loader animation
-│   ├── error-boundary/error-boundary.component.tsx  # Error boundary
+│   ├── loader/loader.component.tsx                     # Loader animation
+│   ├── error-boundary/error-boundary.component.tsx     # Error boundary
 ├── constants/
-│   └── vehicle.constants.ts               # App constants (start year)
+│   └── vehicle.constants.ts                            # App constants (start year)
 ├── services/
-│   └── vehicle.service.ts                 # API service for car data
+│   └── vehicle.service.ts                              # API service for car data
 ├── types/
-│   └── vehicle.types.ts                   # TypeScript types
+│   └── vehicle.types.ts                                # TypeScript types
 └── styles/
-    └── globals.css                        # Global CSS
+    └── globals.css                                     # Global CSS
 
 ```
 

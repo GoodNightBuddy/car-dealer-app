@@ -48,7 +48,7 @@ export default function FilterPage() {
           value={selectedMake}
           onChange={(e) => setSelectedMake(Number(e.target.value))}
         >
-          <option value="">Select Vehicle Make</option>
+          <option value="">Select Vehicle Manufacturer</option>
           {vehicleMakes.map((make) => (
             <option key={make.MakeId} value={make.MakeId}>
               {make.MakeName}

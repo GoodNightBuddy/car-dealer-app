@@ -2,6 +2,7 @@ import { VehicleModelsResponse } from '@/types/vehicle.types'
 import { vehicleService } from '@/services/vehicle.service'
 import { START_YEAR } from '@/constants/vehicle.constants'
 import { randomUUID } from 'crypto'
+import Link from 'next/link'
 
 export async function generateStaticParams(): Promise<
   { makeId: string; year: string }[]
@@ -14,17 +15,8 @@ export async function generateStaticParams(): Promise<
       (_, i) => START_YEAR + i
     )
 
-    const maxMakes = parseInt(process.env.MAX_MAKES || '10', 10)
-    const maxYears = parseInt(process.env.MAX_YEARS || '5', 10)
-    const fetchAll = process.env.FETCH_ALL_PAGES === 'true'
-
-    const limitedMakes = fetchAll
-      ? vehicleMakes
-      : vehicleMakes.slice(0, maxMakes)
-    const limitedYears = fetchAll ? years : years.slice(-maxYears)
-
-    return limitedMakes.flatMap((make) =>
-      limitedYears.map((year) => ({
+    return vehicleMakes.flatMap((make) =>
+      years.map((year) => ({
         makeId: make.MakeId.toString(),
         year: year.toString(),
       }))
@@ -56,8 +48,14 @@ export default async function ResultPage({ params }: ResultPageProps) {
       <main className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
         <h1 className="text-3xl font-bold mb-4">No Results Found</h1>
         <p className="text-lg">
-          No vehicle models were found for the selected make and year.
+          No vehicle models were found for the selected manufacturer and year.
         </p>
+        <Link
+          href="/"
+          className="mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-medium rounded shadow transition duration-300"
+        >
+          Back to Home
+        </Link>
       </main>
     )
   }
@@ -74,6 +72,12 @@ export default async function ResultPage({ params }: ResultPageProps) {
           </li>
         ))}
       </ul>
+      <Link
+        href="/"
+        className="mt-6 px-4 py-2 bg-blue-500 hover:bg-blue-700 text-white font-medium rounded shadow transition duration-300"
+      >
+        Back to Home
+      </Link>
     </main>
   )
 }
